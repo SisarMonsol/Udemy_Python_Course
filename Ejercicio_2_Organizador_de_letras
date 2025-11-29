@@ -1,1 +1,16 @@
+def separador_de_letras(palabra):
+    """
+    Esta función recibe una palabra y devuelve una cadena con las letras separadas."""
+    letras_unicas = list(set(palabra))
 
+    return letras_unicas
+    
+def organizador_de_letras(letras):
+    """
+    Esta función recibe una lista de letras y devuelve una cadena con las letras ordenadas y separadas por comas.
+    """
+    letras_ordenadas = sorted(letras)
+    return ", ".join(letras_ordenadas)
+
+palabra = input("Ingrese una palabra: ")
+print(organizador_de_letras(separador_de_letras(palabra)))
