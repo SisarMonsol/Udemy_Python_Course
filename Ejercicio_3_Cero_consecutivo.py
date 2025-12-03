@@ -5,10 +5,15 @@ def verificador_de_secuencia(*args):
   Esta función recibirá los números ingresados por el usuario y virificará que no haya más de dos 0 de manera consecutiva.
   """
   resultado = False
-  for num in args:
-    
+  anterior = None
   
-  return resultado
+  for num in args:
+    if num == anterior and num == 0:
+      resultado =True
+      break
+    anterior = num
+return resultado
 
-numeros = input('Ingresa la catidad de números que desees: ')
-print(verificador_de_secuencia(numeros))
+solicitar_numeros = input('Ingresa la catidad de números que desees separados por espacios: ').split()
+numeros = [int(n) for n in solicitar_numeros]
+print(verificador_de_secuencia(*numeros))
